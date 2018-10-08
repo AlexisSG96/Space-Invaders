@@ -53,7 +53,7 @@ class Settings:
         self.speedup_scale = 1.2
         
         # How quickly the alien point values increase
-        self.score_scale = 1.5
+        self.score_scale = 2
 
         # Initialize a channel for each object that needs one
         self.audio_channels = 4
@@ -87,7 +87,9 @@ class Settings:
         self.ship_speed_factor *= self.speedup_scale
         self.bullet_speed_factor *= self.speedup_scale
         self.alien_speed_factor *= self.speedup_scale
-        self.alien_points = int(self.alien_points * self.score_scale)
+        self.alien_points['1'] *= self.score_scale
+        self.alien_points['2'] *= self.score_scale
+        self.alien_points['3'] *= self.score_scale
         
     def initialize_audio_settings(self):
         """Initialize mixer settings."""
