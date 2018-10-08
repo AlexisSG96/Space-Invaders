@@ -20,7 +20,7 @@ class Scoreboard:
 
         # Font settings for scoring information
         self.text_color = (30, 30, 30)
-        self.font = pygame.font.SysFont(None, 48)
+        self.font = pygame.font.SysFont(None, 40)
 
         self.score_image = None
         self.score_rect = None
@@ -51,19 +51,21 @@ class Scoreboard:
         rounded_score = int(round(self.stats.score, -1))
 
         # Using the comma as a thousands separator
-        score_str = "{:,}".format(rounded_score)
+        score_temp = "{:,}".format(rounded_score)
+        score_str = 'Score: ' + str(score_temp)
         self.score_image = self.font.render(score_str, True, self.text_color, self.ai_settings.bg_color)
 
         # Display the score at the top right of the screen
         self.score_rect = self.score_image.get_rect()
         self.score_rect.right = self.screen_rect.right - 20
-        self.score_rect.top = 20
+        self.score_rect.top = 10
 
     def prep_high_score(self):
         """Prepare high score value."""
         # Same format as score
         high_score = int(round(self.stats.high_score, -1))
-        high_score_str = "{:,}".format(high_score)
+
+        high_score_str = 'High Score: ' + "{:,}".format(high_score)
         self.high_score_image = self.font.render(high_score_str, True, self.text_color, self.ai_settings.bg_color)
 
         # Center the high score at the top of the screen
@@ -73,7 +75,8 @@ class Scoreboard:
 
     def prep_level(self):
         """Prepare level image"""
-        self.level_image = self.font.render(str(self.stats.level), True, self.text_color, self.ai_settings.bg_color)
+        level_str = 'Level: ' + str(self.stats.level)
+        self.level_image = self.font.render(level_str, True, self.text_color, self.ai_settings.bg_color)
 
         # Position the level below the score
         self.level_rect = self.level_image.get_rect()

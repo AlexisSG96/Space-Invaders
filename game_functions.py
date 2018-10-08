@@ -108,6 +108,9 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, lasers, bullets,
     for laser in lasers.sprites():
         laser.blitme()
 
+    # Draw the score information
+    sb.show_score()
+
     # Redraw a ufo if needed
     if ufo:
         ufo.update()
@@ -117,9 +120,6 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, lasers, bullets,
     # Draw aliens and ship
     ship.blitme()
     aliens.draw(screen)
-
-    # Draw the score information
-    sb.show_score()
 
     # Draw bunker as needed
     check_bunker_collisions(lasers, bullets, bunkers)

@@ -14,7 +14,7 @@ class Settings:
         # Screen Settings
         self.screen_width = 1200
         self.screen_height = 800
-        self.bg_color = (230, 230, 230)
+        self.bg_color = (200, 200, 200)
 
         # Ship settings
         self.ship_speed_factor = None
@@ -70,7 +70,7 @@ class Settings:
         # Speed factor for each object
         self.ship_speed_factor = 1.5
         self.bullet_speed_factor = 3
-        self.laser_speed_factor = 0.5 * 2.5
+        self.laser_speed_factor = 1.25
         self.alien_speed_factor = 1
         self.ufo_speed_factor = self.alien_speed_factor * 2
 
