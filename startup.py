@@ -15,9 +15,11 @@ class Startup:
         self.invader_font = pygame.font.SysFont(None, 150)
         self.pt_font = pygame.font.SysFont(None, 40)
 
-        self.space_image = 'SPACE'
+        self.space_image = None
+        self.space_image_word = 'SPACE'
         self.space_image_rect = None
-        self.invader_image = 'INVADERS'
+        self.invader_image = None
+        self.invader_image_word = 'INVADERS'
         self.invader_image_rect = None
         self.alien_image_1 = None
         self.alien_rect_1 = None
@@ -66,8 +68,8 @@ class Startup:
         self.alien_points_image_2 = self.get_score_str(self.alien_points_2)
         self.alien_points_image_3 = self.get_score_str(self.alien_points_3)
         self.ufo_points_image = self.get_score_str(self.ufo_points)
-        self.space_image = self.space_font.render(str(self.space_image), True, self.white, self.black)
-        self.invader_image = self.invader_font.render(str(self.invader_image), True, self.green, self.black)
+        self.space_image = self.space_font.render(str(self.space_image_word), True, self.white, self.black)
+        self.invader_image = self.invader_font.render(str(self.invader_image_word), True, self.green, self.black)
 
     def get_score_str(self, pts):
         """Used to render font for each score"""
@@ -136,4 +138,3 @@ class Startup:
         self.screen.blit(self.alien_points_image_3, self.alien_points_rect_3)
         self.screen.blit(self.ufo_points_image, self.ufo_points_rect)
         self.screen.blit(self.ufo_image, self.ufo_rect)
-
